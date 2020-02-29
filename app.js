@@ -2,8 +2,10 @@ const mongoose = require("mongoose");
 const express = require("express");
 const Schema = mongoose.Schema;
 const app = express();
+var cors = require('cors');
 const jsonParser = express.json();
 app.use(express.static(__dirname+'../src'));
+app.use(cors());
 var fs = require("fs");
 
 
