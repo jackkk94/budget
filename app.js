@@ -12,7 +12,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/api/expense", function (req, res) {
-    var content = fs.readFileSync("data.json", "utf8");
+    var content = fs.readFileSync("src/assets/data.json", "utf8");
     var expenses = JSON.parse(content).expense.data;
     let values = expenses.map(i=>i.value);
     summ = values.length>0? values.reduce((accumulator, currentValue) => accumulator + currentValue): 0;
@@ -28,16 +28,16 @@ app.post("/api/expense", jsonParser, function (req, res) {
     const type = req.body.type;
     const title = req.body.title;
     const value = req.body.value;
-    var arr = JSON.parse(fs.readFileSync("data.json", "utf8"));
+    var arr = JSON.parse(fs.readFileSync("src/assets/data.json", "utf8"));
     const expense = { "date":date, "type":type, "person":person, "title":title, "value":value };
     arr.expense.data.push(expense);
     console.log(expense);
-    fs.writeFileSync("data.json", JSON.stringify(arr));
+    fs.writeFileSync("src/assets/data.json", JSON.stringify(arr));
     res.send(expense);
 });
 
 app.get("/api/income", function (req, res) {
-    var content = fs.readFileSync("data.json", "utf8");
+    var content = fs.readFileSync("src/assets/data.json", "utf8");
     var incomes = JSON.parse(content).income.data;
     let values = incomes.map(i=>i.value);
     summ = values.length>0? values.reduce((accumulator, currentValue) => accumulator + currentValue): 0;
@@ -49,11 +49,11 @@ app.post("/api/income", jsonParser, function (req, res) {
     const date = req.body.date;
     const person = req.body.person;
     const value = req.body.value;
-    var arr = JSON.parse(fs.readFileSync("data.json", "utf8"));
+    var arr = JSON.parse(fs.readFileSync("src/assets/data.json", "utf8"));
     const income = { "date":date,  "person":person, "value":value };
     arr.income.data.push(income);
     console.log(income);
-    fs.writeFileSync("data.json", JSON.stringify(arr));
+    fs.writeFileSync("src/assets/data.json", JSON.stringify(arr));
     res.send(income);
 });
 
