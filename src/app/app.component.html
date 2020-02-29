@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-toolbar>
+ <a routerLink="">
+  <i class="material-icons">
+    home
+  </i> 
+  Family Application</a>
+ <ul class='nav-list'>
+  <li><a routerLink="/expense">Расходы</a></li>
+  <li><a routerLink="/income">Доходы</a></li>
+  <li><button mat-button [matMenuTriggerFor]="menu"><i class="material-icons">
+    add_circle_outline
+    </i></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openExpenseDialog()">Потратить</button>
+      <button mat-menu-item (click)="openIncomeDialog()">Внести</button>
+    </mat-menu></li>
+ </ul>
+
+</mat-toolbar> 
+ <div class="container-fluid main-container">
+    
+    <router-outlet></router-outlet>
+  </div>
+
+  

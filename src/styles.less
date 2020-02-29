@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  & li {
+    padding: 5px 10px;
+    align-self: center;
+  }
+}
+a,a:hover {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  & .material-icons {
+    margin-right: 6px;
+  }
+  outline: none;
+}
+button {
+  outline: none;
+}
+.main-container {
+  margin-top: 20px;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: center;
+  & button {
+    margin: 5px;
+  }
+}
+
+
+table{
+  width:100%;
+}
+
+
+th.mat-sort-header-sorted {
+  color: black;
+}

@@ -1,0 +1,41 @@
+{
+    "data": [
+        {
+            "date": 1581521234642,
+            "type": "Еда",
+            "person": "Люба",
+            "title": "sccccs",
+            "value": 1111
+        },
+        {
+            "date": 1580570318070,
+            "type": "Еда",
+            "person": "Люба",
+            "title": "sccccs",
+            "value": 1111
+        },
+        {
+            "date": 1580570391015,
+            "type": "Еда",
+            "person": "Люба",
+            "title": "vbn",
+            "value": 100
+        },
+        {
+            "date": 1580570406968,
+            "type": "Еда",
+            "person": "Люба",
+            "title": "888888",
+            "value": 200
+        },
+        {
+            "date": 1580570465847,
+            "type": "Еда",
+            "person": "Люба",
+            "title": "hugjhg",
+            "value": 300
+        }
+    ],
+    "total": 1711
+
+}

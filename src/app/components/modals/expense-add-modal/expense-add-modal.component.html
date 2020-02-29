@@ -1,0 +1,59 @@
+<h1 mat-dialog-title class="center">Добавление расхода</h1>
+<div mat-dialog-content style="overflow: unset!important;">
+  <mat-form-field class="full-width">
+    <mat-label>Тип расхода</mat-label>
+    <mat-select [(value)]="data.type"
+    [class.is-invalid]="data.type=='' && !valid">
+      <mat-option *ngFor="let type of types" [value]="type">
+        {{ type }}
+      </mat-option>
+    </mat-select>
+    <div class="invalid-feedback">
+      Ввод типа обязателен
+    </div>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Человек</mat-label>
+    <mat-select [(value)]="data.person"
+    [class.is-invalid]="data.person=='' && !valid"
+    >
+      <mat-option *ngFor="let name of persons" [value]="name">
+        {{ name }}
+      </mat-option>
+    </mat-select>
+    <div class="invalid-feedback">
+      Ввод человека обязателен
+    </div>
+  </mat-form-field>
+  <div class="form-group">
+    <label for="title">Введите заголовок расхода</label>
+    <input 
+      type="text"
+      class="form-control"
+      [class.is-invalid]="data.title=='' && !valid"
+      [(ngModel)]="data.title"
+      required
+    />
+    <div class="invalid-feedback">
+      Ввод заголовка обязателен
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="summ">Введите сумму</label>
+    <input
+      type="number"
+      class="form-control"
+      [class.is-invalid]="data.value==null && !valid"
+      [(ngModel)]="data.value"
+      required
+    />
+    <div class="invalid-feedback">
+      Ввод суммы обязателен
+    </div>
+  </div>
+
+</div>
+<div mat-dialog-actions class="dialog-footer">
+  <button type="button"  class="btn btn-secondary" (click)="close()" >Отмена</button>
+  <button type="button" class="btn btn-success" (click)="save()">Добавить</button>
+</div>
