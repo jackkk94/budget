@@ -19,7 +19,9 @@ export class MainService {
   constructor(private http: HttpClient) { }
 
   getExpense(): Observable<any> {
-    return this.http.get('/api/expense');
+    const headers = new HttpHeaders();
+    headers.append('Content-type', 'application/json');
+    return this.http.get('/api/expense',{headers});
   }
 
   getIncome(): Observable<any> {
