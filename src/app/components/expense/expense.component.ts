@@ -35,7 +35,7 @@ export class ExpenseComponent implements OnInit {
   updateTable() {
     this.service.getExpense().subscribe(result => {
       this.data=[];
-      result.data.map(i => {
+      JSON.parse(result).data.map(i => {
         this.data.push(i);
       })
       this.data.sort((a,b)=>b.date - a.date)
